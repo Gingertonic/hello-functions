@@ -17,7 +17,8 @@ export default class EventsContainer extends Component {
         this.setState({ message: e.target.value })
     }
 
-    handleSubmit = () => {
+    handleSubmit = e => {
+        e.preventDefault()
         const options = {
             method: 'POST',
             body: JSON.stringify(this.state.message)
